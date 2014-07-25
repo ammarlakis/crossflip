@@ -1,5 +1,5 @@
-var activeColor = 'yellow';
-var nactiveColor= 'grey';
+var activeColor = 'rgba(255, 255, 0, 0.8)';
+var nactiveColor= 'rgba(50, 50, 0, 0.2)';
 var modes = [];
 modes[0] = 'nactive';
 modes[1] = 'active';
