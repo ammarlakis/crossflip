@@ -13,7 +13,7 @@ function GameManager(){
             1,1,1,2,1,1,1
         ],
         [
-            0,0,0,0,0
+            0,0,0,0,0,2,2
         ]
     ];
     this.generateGame = function (){
@@ -53,19 +53,23 @@ function GameManager(){
             var level = gameManager.level;
             //console.log(level[nrow][ncol]);
             level[nrow][ncol] = 1 - level[nrow][ncol];
-            for(var row = nrow; (row < level.length) && (level[row][ncol] != 2); row++){
+            for(var row = nrow + 1; (row < level.length) && (level[row][ncol] != 2); row++){
+                console.log('flipping down');
                 flipColor($('#'+'t'+row+'-'+ncol)[0]);
                 level[row][ncol] = 1 - level[row][ncol];
             }
-            for(var row = nrow; (row >= 0) && (level[row][ncol] != 2); row--){
+            for(var row = nrow - 1; (row >= 0) && (level[row][ncol] != 2); row--){
+                console.log('flipping up');
                 flipColor($('#'+'t'+row+'-'+ncol)[0]);
                 level[row][ncol] = 1 - level[row][ncol];
             }
-            for(var col = ncol; (col < level[nrow].length) && (level[nrow][col] != 2); col++){
+            for(var col = ncol + 1; (col < level[nrow].length) && (level[nrow][col] != 2); col++){
+                console.log('flipping right');
                 flipColor($('#'+'t'+nrow+'-'+col)[0]);
                 level[nrow][col] = 1 - level[nrow][col];
             }
-            for(var col = ncol; (col >= 0) && (level[nrow][col] != 2); col--){
+            for(var col = ncol - 1; (col >= 0) && (level[nrow][col] != 2); col--){
+                console.log('flipping left');
                 flipColor($('#'+'t'+nrow+'-'+col)[0]);
                 level[nrow][col] = 1 - level[nrow][col];
             }
