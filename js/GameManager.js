@@ -48,15 +48,19 @@ function GameManager(){
             console.log(level[nrow][ncol]);
             level[nrow][ncol] = 1 - level[nrow][ncol];
             for(var row = nrow; (row < level.length) && (level[row][ncol] != 2); row++){
+                flipColor(document.getElementById('t'+row+'-'+ncol));
                 level[row][ncol] = 1 - level[row][ncol];
             }
             for(var row = nrow; (row >= 0) && (level[row][ncol] != 2); row--){
+                flipColor(document.getElementById('t'+row+'-'+ncol));
                 level[row][ncol] = 1 - level[row][ncol];
             }
             for(var col = ncol; (col < level[nrow].length) && (level[nrow][col] != 2); col++){
+                flipColor(document.getElementById('t'+nrow+'-'+col));
                 level[nrow][col] = 1 - level[nrow][col];
             }
             for(var col = ncol; (col >= 0) && (level[nrow][col] != 2); col--){
+                flipColor(document.getElementById('t'+nrow+'-'+col));
                 level[nrow][col] = 1 - level[nrow][col];
             }
         }
