@@ -1,0 +1,2 @@
+function GameManager(score, level){
+}
