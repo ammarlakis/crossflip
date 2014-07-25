@@ -7,10 +7,13 @@ modes[2] = 'disabled';
 function GameManager(){
     this.level = [
         [
-            0,0,1,2,2,1,2
+            1,1,1,2,2,1,2
         ],
         [
-            0,1,0,2,1,1,1
+            1,1,1,2,1,1,1
+        ],
+        [
+            0,0,0,0,0
         ]
     ];
     this.generateGame = function (){
@@ -25,21 +28,22 @@ function GameManager(){
         $(game).appendTo('div.container');
     }
     this.flip = function flip(e){
-        console.log(e);
+        //console.log(e);
         flipColor(e);
         flipTiles(e);
         if (this.checkIfWin())
             alert('you won !');
         
         function flipColor(e){
+            //console.log(e)
             move(e)
             .set('background-color',e.classList.contains('active')? nactiveColor:activeColor)
             .delay('0.1s')
             .end();
-            if (e.classList.contains('active')){
-                e.classList.remove('active'); e.classList.add('nactive');
+            if ($(e).hasClass('active')){
+                $(e).removeClass('active'); $(e).addClass('nactive');
             } else {
-                e.classList.remove('nactive'); e.classList.add('active');
+                $(e).removeClass('nactive'); $(e).addClass('active');
             }
         }
         function flipTiles(e){
@@ -47,7 +51,7 @@ function GameManager(){
             var nrow = parseInt(match[0], 10);
             var ncol = parseInt(match[1], 10);
             var level = gameManager.level;
-            console.log(level[nrow][ncol]);
+            //console.log(level[nrow][ncol]);
             level[nrow][ncol] = 1 - level[nrow][ncol];
             for(var row = nrow; (row < level.length) && (level[row][ncol] != 2); row++){
                 flipColor($('#'+'t'+row+'-'+ncol)[0]);
