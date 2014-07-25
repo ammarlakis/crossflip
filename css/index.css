@@ -25,6 +25,9 @@ body {
 .box.nactive{
     background-color: grey;
 }
+.box.disabled{
+    background-color: grey;
+}
 
 .small {
     width: 50px;

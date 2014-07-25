@@ -3,20 +3,22 @@ var nactiveColor= 'grey';
 var modes = [];
 modes[0] = 'nactive';
 modes[1] = 'active';
+modes[2] = 'disabled';
 function GameManager(){
     this.level = [
         [
-            0,0,1
+            0,0,1,2,2,1,2
         ],
         [
-            0,1,0
+            0,1,0,2,1,1,1
         ]
     ];
     this.generateGame = function (){
         var game = '';
         for(var row = 0; row < this.level.length; row++){
             for(var col = 0; col < this.level[row].length; col++){
-                game += '<div onclick="gameManager.flip(this);" id="t'+row+'-'+col+'" class="box small '+modes[this.level[row][col]]+'" style="-webkit-transition: 0ms 2000ms; transition: 0ms 2000ms;"></div>' + "\n";
+                var flipFunc = this.level[row][col] == 2 ? '' : 'gameManager.flip(this);'
+                game += '<div onclick="' + flipFunc + '" id="t'+row+'-'+col+'" class="box small '+modes[this.level[row][col]]+'" style="-webkit-transition: 0ms 2000ms; transition: 0ms 2000ms;"></div>' + "\n";
             }
             game += '<br />' + '<br />' + '<br />' + "\n";
         }
@@ -26,9 +28,9 @@ function GameManager(){
         console.log(e);
         flipColor(e);
         flipTiles(e);
-
         if (this.checkIfWin())
             alert('you won !');
+        
         function flipColor(e){
             move(e)
             .set('background-color',e.classList.contains('active')? nactiveColor:activeColor)
