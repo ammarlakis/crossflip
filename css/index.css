@@ -1,17 +1,22 @@
 body {
-  padding: 50px;
-  font: 14px/1.5 "helvetica neue", helvetica, arial, sans-serif;
-  color: #8b8b8b;
+    padding: 50px;
+    font: 14px/1.5 "helvetica neue", helvetica, arial, sans-serif;
+    color: #8b8b8b;
 }
 
 .box {
-  margin: 5px;
-  border: 1px solid #888;
-  border-radius: 10px;
-  box-shadow: 1px;
-  font-size: 11px;
-  text-align: center;
-  line-height: 50px;
+    margin: 5px;
+    border: 1px solid #BBB;
+    border-radius: 10px;
+    box-shadow: 1px;
+    font-size: 11px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+.container {
+    width: auto;
+    height: auto;
 }
 .box.active{
     background-color: yellow;
@@ -22,6 +27,6 @@ body {
 }
 
 .small {
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 }

@@ -5,32 +5,10 @@
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/GameManager.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
-
-<!--
-        <script type="text/javascript">
-            function flip(e){
-                console.log(e);
-                move(e)
-                .set('background-color',e.classList.contains('active')? nactiveColor:activeColor)
-                .delay('0.1s')
-                .end();
-                if (e.classList.contains('active')){
-                    e.classList.remove('active'); e.classList.add('nactive');
-                } else {
-                    e.classList.remove('nactive'); e.classList.add('active');
-                }
-            }
-            function getTarget(e){
-                e=e||window.event;
-                return (e.target||e.srcElement);
-            }
-        </script>
--->
-
         <link type="text/css" rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
     <body>
-        <div class="game">
+        <div class="container">
         </div>
     </body>
 </html>
