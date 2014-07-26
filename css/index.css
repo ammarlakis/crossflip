@@ -8,22 +8,20 @@ body {
     margin: 5px;
     border: 1px solid #BBB;
     border-radius: 10px;
-    box-shadow: 1px;
-    font-size: 11px;
-    line-height: 50px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     float: left;
     position: relative;
 }
 .container {
     position: relative;
     background: #BCBDAC;
-    box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
     border: 10px solid #bbada0;
-    align-content: center;
-    width: 37%;
-    height: 90%;
-    margin: 0 auto;
+    padding: 5px;
+    margin: 70 auto;
 }
 .box.active{
     background-color: rgba(255, 255, 0, 0.8);
@@ -38,6 +36,6 @@ body {
 }
 
 .small {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }

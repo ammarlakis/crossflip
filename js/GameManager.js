@@ -7,15 +7,30 @@ modes[2] = 'disabled';
 function GameManager(){
     this.level = [
         [
-            1,1,1,2,2,1,2
+            1,1,1,2,2,1,2,1,1,2,2,1,2
         ],
         [
-            1,1,1,2,1,1,1
+            1,1,1,2,1,1,1,1,1,2,2,1,2
         ],
         [
-            0,0,0,0,0,2,2
+            1,1,1,2,2,1,2,1,1,2,2,1,2
+        ],
+        [
+            1,1,1,2,1,1,1,1,1,2,2,1,2
+        ],
+        [
+            1,1,1,2,2,1,2,1,1,2,2,1,2
+        ],
+        [
+            1,1,1,2,1,1,1,1,1,2,2,1,2
+        ],
+        [
+            0,0,0,0,0,2,2,1,1,2,2,1,2
         ]
     ];
+    // Resize container
+    $('.container').css('height',this.level.length * 82);
+    $('.container').css('width',this.level[0].length * 82);
     this.generateGame = function (){
         var game = '';
         for(var row = 0; row < this.level.length; row++){
