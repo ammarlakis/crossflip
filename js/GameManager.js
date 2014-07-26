@@ -30,11 +30,6 @@ function GameManager(){
         flipColor(e);
         //and corresponding vertical and horizonal tiles
         flipTiles(e);
-        //show message when game is over
-        if (this.checkIfWin()){
-            alert('you won !');
-            this.nextLevel();
-        }
         //flip single tile function
         function flipColor(e){
             //console.log(e)
@@ -42,7 +37,13 @@ function GameManager(){
             move(e)
             .set('background-color',e.classList.contains('active')? nactiveColor:activeColor)
             .delay('0.1s')
-            .end();
+            .end(function(){
+                if (gameManager.checkIfWin()){
+                    //after changing color, check if game is over
+                    alert('you won !');
+                    gameManager.nextLevel();
+                }            
+            });
             // change class
             if ($(e).hasClass('active')){
                 $(e).removeClass('active'); $(e).addClass('nactive');
