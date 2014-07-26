@@ -3,13 +3,14 @@ var nactiveColor= 'rgba(50, 50, 0, 0.2)';
 var modes = ['nactive','active','disabled'];
 function GameManager(){
     // Read level
+    this.score = 0;
     this.levelRank = 1;
     this.level = new Level(this.levelRank);
     // Resize container where 82 is one cell width and height
     //generate game in html
     this.generateGame = function (){
-        $('.container').css('height',this.level.length * 82);
-        $('.container').css('width',this.level[0].length * 82);
+        $('#gridcontainer').css('height',this.level.length * 82);
+        $('#gridcontainer').css('width',this.level[0].length * 82);
         var game = '';
         // loop on every level matrix element and add html tile element with coressponding id and flip function
         for(var row = 0; row < this.level.length; row++){
@@ -20,8 +21,8 @@ function GameManager(){
             game += "\n";
         }
         // add generated html to container div block
-        $('div.container').empty();
-        $(game).appendTo('div.container');
+        $('div#gridcontainer').empty();
+        $(game).appendTo('div#gridcontainer');
     }
     // flip tile after pressed
     this.flip = function (e){
@@ -41,6 +42,7 @@ function GameManager(){
                 if (gameManager.checkIfWin()){
                     //after changing color, check if game is over
                     alert('you won !');
+                    gameManager.updateScore(gameManager.levelRank);
                     gameManager.nextLevel();
                 }            
             });
@@ -98,6 +100,10 @@ function GameManager(){
             }
         }
         return true;
+    }
+    this.updateScore = function (scoreAdded){
+        this.score += scoreAdded;
+        $('#scoreboard').html(this.score);
     }
     this.nextLevel = function (){
         this.levelRank++;

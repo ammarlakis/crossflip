@@ -1,27 +1,26 @@
 body {
-    padding: 50px;
-    font: 14px/1.5 "helvetica neue", helvetica, arial, sans-serif;
-    color: #8b8b8b;
+    font: 14px/1.5 "Roboto", Roboto, arial, sans-serif;
+    color: #7B7B7B;
+    position: relative;
 }
 
 .box {
-    margin: 5px;
     border: 1px solid #BBB;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     float: left;
     position: relative;
+    margin: 5px;
 }
 .container {
-    position: relative;
     background: #BCBDAC;
     border-radius: 7px;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border: 10px solid #bbada0;
     padding: 5px;
-    margin: 70 auto;
+    position: relative;
 }
 .box.active{
     background-color: rgba(255, 255, 0, 0.8);
@@ -38,4 +37,20 @@ body {
 .small {
     width: 70px;
     height: 70px;
+}
+
+.wide {
+    width: 400px;
+    height: 70px;
+}
+
+#scoreboard {
+    font: 48px/1.5 "Roboto", Roboto, arial, sans-serif;
+    width: 180px;
+    border: 0px;
+    margin: 10 auto;
+    text-align: center;
+}
+#gridcontainer {
+    margin: 20 auto;
 }
