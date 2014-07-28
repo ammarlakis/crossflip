@@ -32,19 +32,20 @@ function GameManager(){
         //and corresponding vertical and horizonal tiles
         flipTiles(e);
         //flip single tile function
+        setTimeout(function(){
+            if (gameManager.checkIfWin()){
+                //after changing color, check if game is over
+                alert('you won !');
+                gameManager.updateScore(gameManager.levelRank);
+                gameManager.nextLevel();
+            }
+        },350);
         function flipColor(e){
             //console.log(e)
             // change its color
-            move(e)
-            .set('background-color',e.classList.contains('active')? nactiveColor:activeColor)
-            .delay('0.1s')
-            .end(function(){
-                if (gameManager.checkIfWin()){
-                    //after changing color, check if game is over
-                    alert('you won !');
-                    gameManager.updateScore(gameManager.levelRank);
-                    gameManager.nextLevel();
-                }            
+            $(e).css({
+                transition: 'background-color 0.2s ease-in-out',
+                "backgournd-color": e.classList.contains('active')? nactiveColor:activeColor
             });
             // change class
             if ($(e).hasClass('active')){
