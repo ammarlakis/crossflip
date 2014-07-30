@@ -1,0 +1,4 @@
+crossflip
+=========
+
+Crossflip classical game
