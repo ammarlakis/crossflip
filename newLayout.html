@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/GameManager.js"></script>
+        <script type="text/javascript" src="js/Level.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <link rel="stylesheet" href="newLayout.css" />
+    </head>
+    <body>
+        <div id="mainContainer">
+            <div id="header">
+                <div id="logoContainer">
+                    <div id="logo" class="roundCube">
+                        <!--[if lte IE 8]><img src="img/logo.png" /><![endif]-->
+                        <!--[if gt IE 8]><img src="img/logo.svg" /><![endif]-->
+                        <!--[if !IE]> --><img src="img/logo.svg" style="width:180px;"/><!-- <![endif]-->
+                    </div>
+                </div>
+                <div id="boardContainer">
+                    <strong id="scoreLabel" style="margin-left: 40px;" >Score</strong>
+                    <div id="scoreboard" class="roundCube greyback"></div>
+                </div>
+            </div>
+            <div id="gameContainer">
+                <div id="gameGrid" class="roundCube greyback"></div>
+            </div>
+        </div>
+        <div id="gameoverBoard">Next Level ></div>
+    </body>
+</html>

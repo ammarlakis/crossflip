@@ -1,7 +1,6 @@
 body {
     font: 14px/1.5 "Roboto", Roboto, arial, sans-serif;
-    color: #7B7B7B;
-    position: relative;
+    color: #7B7B70;
 }
 
 .box {
@@ -12,6 +11,7 @@ body {
     float: left;
     position: relative;
     margin: 5px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .container {
     background: #BCBDAC;
@@ -45,12 +45,32 @@ body {
 }
 
 #scoreboard {
-    font: 48px/1.5 "Roboto", Roboto, arial, sans-serif;
+    font: 48px/1.5 "Roboto", Rboto, arial, sans-serif;
     width: 180px;
-    border: 0px;
-    margin: 10 auto;
+    border: 1px solid #BBB;
     text-align: center;
 }
 #gridcontainer {
     margin: 20 auto;
+}
+#nextlevel {
+    animation: nextlevelShow 5s;
+    -webkit-animation: nextlevelShow 5s; /* Chrome, Safari, Opera */
+    width: 180px;
+    border: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: bold;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes nextlevelShow {
+    from   {background:rgba(188,188,172,0)}
+    to   {background:rgba(188,188,172,100);}
+}
+
+/* Standard syntax */
+@keyframes nextlevelShow {
+    from   {background:rgba(188,188,172,0);}
+    to   {background:rgba(188,188,172,100);}
 }

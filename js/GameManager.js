@@ -9,8 +9,10 @@ function GameManager(){
     // Resize container where 82 is one cell width and height
     //generate game in html
     this.generateGame = function (){
-        $('#gridcontainer').css('height',this.level.length * 82);
-        $('#gridcontainer').css('width',this.level[0].length * 82);
+        $('#gameoverBoard').css({opacity: 0, visibility: 'collapse'});
+        $('#gameoverBoard').attr('onclick','');
+        $('#gameGrid').css('height',this.level.length * 82);
+        $('#gameGrid').css('width',this.level[0].length * 82);
         var game = '';
         // loop on every level matrix element and add html tile element with coressponding id and flip function
         for(var row = 0; row < this.level.length; row++){
@@ -21,8 +23,8 @@ function GameManager(){
             game += "\n";
         }
         // add generated html to container div block
-        $('div#gridcontainer').empty();
-        $(game).appendTo('div#gridcontainer');
+        $('div#gameGrid').empty();
+        $(game).appendTo('div#gameGrid');
     }
     // flip tile after pressed
     this.flip = function (e){
@@ -35,9 +37,15 @@ function GameManager(){
         setTimeout(function(){
             if (gameManager.checkIfWin()){
                 //after changing color, check if game is over
-                alert('you won !');
                 gameManager.updateScore(gameManager.levelRank);
-                gameManager.nextLevel();
+                $('#gameoverBoard').css({
+                    opacity: 100,
+                    visibility: 'visible',
+                    '-webkit-transition': 'opacity 2s ease-in-out',
+                    transition: 'opacity 2s ease-in-out'
+                });
+                $('.box').attr('onclick','');
+                $('#gameoverBoard').attr('onclick','gameManager.nextLevel()');
             }
         },350);
         function flipColor(e){
