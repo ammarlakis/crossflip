@@ -38,7 +38,7 @@ Crossflip is licensed under [GNU GPL V3][license]
 
 [hacker.org]:http://www.hacker.org/cross/
 [dillinger]:http://dillinger.io/
-[ontile]:https://github.com/ammar-lakis/crossflip/blob/master/img/ontile.png
-[offtile]:https://github.com/ammar-lakis/crossflip/blob/master/img/offtile.png
-[distile]:https://github.com/ammar-lakis/crossflip/blob/master/img/distile.png
+[ontile]:https://raw.githubusercontent.com/ammar-lakis/crossflip/master/img/ontile.PNG
+[offtile]:https://raw.githubusercontent.com/ammar-lakis/crossflip/master/img/offtile.PNG
+[distile]:https://raw.githubusercontent.com/ammar-lakis/crossflip/master/img/distile.PNG
 [license]:https://github.com/ammar-lakis/crossflip/blob/master/LICENSE
