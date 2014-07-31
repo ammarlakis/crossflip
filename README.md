@@ -26,7 +26,7 @@ off
 
 Changelog
 ---------
-- Moves limit added for a more challenging game. *Thanks for [Tamer Shlash][tamer]
+- Moves limit added for a more challenging game. *Thanks for [Tamer Shlash][tamer]*
 
 License
 -------
