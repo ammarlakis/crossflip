@@ -11,12 +11,13 @@ function GameManager(){
     //generate game in html
     this.generateGame = function (){
         //update with score
-        console.log(gameManager.score);
         if (gameManager.score == 0){
             gameManager.updateScore(0);
         }
         //reset moves counter for every game
         this.moves = 0;
+        //change moves counter
+        $('#movesCounter').html('Moves: ' + this.moves + '/' + this.level.maxMoves);
         //initialize game grid
         var grid = this.level.grid;
         //hide gameoverBoard
@@ -68,6 +69,8 @@ function GameManager(){
         }
         //add 1 to moves counter
         this.moves ++;
+        //update moves counter  
+        $('#movesCounter').html('Moves: ' + this.moves + '/' + this.level.maxMoves);
         //flip that tile color
         flipColor(e);
         //and corresponding vertical and horizonal tiles
@@ -113,30 +116,25 @@ function GameManager(){
             var ncol = parseInt(match[1], 10);
             
             var grid = gameManager.level.grid;
-            //console.log(level[nrow][ncol]);
             // flip the tile
             grid[nrow][ncol] = 1 - grid[nrow][ncol];
             //iterate and flip down the tiles
             for(var row = nrow + 1; (row < grid.length) && (grid[row][ncol] != 2); row++){
-                console.log('flipping down');
                 flipColor($('#'+'t'+row+'-'+ncol)[0]);
                 grid[row][ncol] = 1 - grid[row][ncol];
             }
             //iterate and flip up the tiles
             for(var row = nrow - 1; (row >= 0) && (grid[row][ncol] != 2); row--){
-                console.log('flipping up');
                 flipColor($('#'+'t'+row+'-'+ncol)[0]);
                 grid[row][ncol] = 1 - grid[row][ncol];
             }
             //iterate and flip right the tiles
             for(var col = ncol + 1; (col < grid[nrow].length) && (grid[nrow][col] != 2); col++){
-                console.log('flipping right');
                 flipColor($('#'+'t'+nrow+'-'+col)[0]);
                 grid[nrow][col] = 1 - grid[nrow][col];
             }
             //iterate and flip left the tiles
             for(var col = ncol - 1; (col >= 0) && (grid[nrow][col] != 2); col--){
-                console.log('flipping left');
                 flipColor($('#'+'t'+nrow+'-'+col)[0]);
                 grid[nrow][col] = 1 - grid[nrow][col];
             }

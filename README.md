@@ -26,7 +26,7 @@ off
 
 Changelog
 ---------
-Nothing changed yet :P
+- Moves limit added for a more challenging game. *Thanks for [Tamer Shlash][tamer]
 
 License
 -------
@@ -42,3 +42,4 @@ Crossflip is licensed under [GNU GPL V3][license]
 [offtile]:https://raw.githubusercontent.com/ammar-lakis/crossflip/master/img/offtile.PNG
 [distile]:https://raw.githubusercontent.com/ammar-lakis/crossflip/master/img/distile.PNG
 [license]:https://github.com/ammar-lakis/crossflip/blob/master/LICENSE
+[tamer]:https://twitter.com/TamerShlash
