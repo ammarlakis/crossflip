@@ -7,12 +7,12 @@ Using HTML5, CSS3 and Javascript, just made for fun :)
 
 Help
 ----
-###How to play
+### How to play
 Tap on a tile to flip all tiles on the same line and column.
 Light up all the tiles !
 *Notice : Black tiles are disabled, they wont flip.*
-###Tiles
-####Enabled
+### Tiles
+#### Enabled
 on
 
 ![on tile][ontile]
@@ -21,7 +21,7 @@ off
 
 ![off tile][offtile]
 
-####Disabled
+#### Disabled
 ![disabled tile][distile]
 
 Changelog
